@@ -113,7 +113,7 @@ ggplot(normdata,aes(x=obsx,y=obsy))+ geom_point(colour="#de2d26",size=1,alpha=0.
   geom_point(size=2.5,colour="red3") +
   geom_errorbar(show.legend=FALSE,aes(x=obsx,y=obsy,ymin=obsy-erry,ymax=obsy+erry),
                 width=0.01,alpha=0.4,color="red3")+
-  geom_errorbarh(show.legend=FALSE,aes(x=obsx,y=obsy,xmin=obsx-errx,xmax=obsx+errx),alpha=0.4,color="red3")+
+  geom_errorbarh(show.legend=FALSE,aes(x=obsx,y=obsy,xmin=obsx-errx,xmax=obsx+errx),alpha=0.4,color="red3",height = .002, width=0.01)+
   geom_ribbon(data=gdata,aes(x=xx,ymin=lwr1, ymax=upr1,y=NULL), alpha=0.95, fill=c("gray80"),show.legend=FALSE) +
   geom_ribbon(data=gdata,aes(x=xx,ymin=lwr2, ymax=upr2,y=NULL), alpha=0.35, fill = c("gray50"),show.legend=FALSE) +
   geom_line(data=gdata,aes(x=xx,y=mean),colour="gray25",linetype="dashed",size=1,show.legend=FALSE)+
