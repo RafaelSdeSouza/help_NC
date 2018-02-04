@@ -18,10 +18,13 @@ dlist <- list(
 model1d.stan <- stan(file="stantest1d.stan", data=dlist,
                      warmup=1000, iter=5000, chains=3, cores=3,
                      control=list(max_treedepth=20))
-densiplot(model1d.stan, pars = c("a", "b1","sigma"), inc_warmup = F, nrow = 2)
+
+## Visualize
+traceplot(model1d.stan, pars = c("a", "b1","sigma"), inc_warmup = F, nrow = 2)
 
 pairs(model1d.stan, pars = c("a", "b1","sigma"))
-## Visualize
+
+
 library(shinystan)
 my_sso <- launch_shinystan(model1d.stan)
 
